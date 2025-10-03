@@ -107,6 +107,9 @@ func New(db *sql.DB, conf *config.Config) (*Server, error) {
 
 	s.openLoggers()
 
+	// SEO route
+	r.Handle("/sitemap.xml", s.withHandler(s.handleSitemap)).Methods("GET")
+
 	// API routes.
 	r.Handle("/api/_initial", s.withHandler(s.initial)).Methods("GET")
 	r.Handle("/api/_login", s.withHandler(s.login)).Methods("POST")
@@ -447,6 +450,9 @@ func (s *Server) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	} else if r.URL.Path == "/manifest.json" {
 		w.Header().Add("Cache-Control", "no-cache")
 		http.ServeFile(w, r, "./ui/dist/manifest.json")
+	} else if r.URL.Path == "/sitemap.xml" {
+		// Handle sitemap.xml through the API router
+		httputil.GzipHandler(s.router).ServeHTTP(w, r)
 	} else {
 		if strings.HasPrefix(r.URL.Path, "/api/") {
 			w.Header().Add("Content-Type", "application/json; charset=UTF-8")
