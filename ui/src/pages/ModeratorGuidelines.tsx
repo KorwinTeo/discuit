@@ -5,9 +5,9 @@ const ModeratorGuidelines = () => {
   return (
     <StaticPage className="page-guidelines" title="Guidelines">
       <main className="document">
-        <h1>Linkforest moderator guidelines</h1>
+        <h1>{import.meta.env.VITE_SITENAME} moderator guidelines</h1>
         <p>
-          Moderators are entrusted with a lot of power and responsibility within the Linkforest
+          Moderators are entrusted with a lot of power and responsibility within the {import.meta.env.VITE_SITENAME}
           communities they serve. Moderators are granted the ability to remove user posts and
           comments, ban users, and put in place additional community specific rules for users to
           follow. These entrusted powers are necessary for moderators to help foster positive
@@ -23,10 +23,10 @@ const ModeratorGuidelines = () => {
         </p>
         <h2>Uphold site guidelines</h2>
         <p>
-          Linkforest moderators are expected to follow and uphold Linkforest’s{` `}
-          <Link to="/guidelines">site guidelines.</Link> Any user content in violation of Linkforest’s
+          {import.meta.env.VITE_SITENAME} moderators are expected to follow and uphold {import.meta.env.VITE_SITENAME}’s{` `}
+          <Link to="/guidelines">site guidelines.</Link> Any user content in violation of {import.meta.env.VITE_SITENAME}’s
           site guidelines should be promptly dealt with. If a user severely or repeatedly is in
-          violation of Linkforest’s site guidelines, moderators are responsible for escalating these
+          violation of {import.meta.env.VITE_SITENAME}’s site guidelines, moderators are responsible for escalating these
           violations to the admin team for further action.
         </p>
         <h2>Be active and engaged</h2>
@@ -60,7 +60,7 @@ const ModeratorGuidelines = () => {
             Ban users without justification (without users violating site guidelines or community
             rules, for example).
           </li>
-          <li>Ban users based on participation in other Linkforest communities.</li>
+          <li>Ban users based on participation in other {import.meta.env.VITE_SITENAME} communities.</li>
         </ul>
         <p>
           User repercussions for violations of community rules should be proportional to the
@@ -74,7 +74,7 @@ const ModeratorGuidelines = () => {
         <h2>Be calm and level-headed</h2>
         <p>
           Moderators are expected to be calm and level-headed as much as possible. For example, when
-          a user is reprimanded for violating Linkforest community or site rules—either by removing
+          a user is reprimanded for violating {import.meta.env.VITE_SITENAME} community or site rules—either by removing
           their post or comment, or by giving them a time-out—users can become upset and may
           sometimes reply back with frustration and impatience. Most of the time this is just the
           user venting. Most users only want to be heard. In these situations simply and kindly
@@ -82,7 +82,7 @@ const ModeratorGuidelines = () => {
           by using aggressive or derogatory language.
         </p>
         <p>
-          The Linkforest admin team has the authority to remove any moderator for abuse of power, or,
+          The {import.meta.env.VITE_SITENAME} admin team has the authority to remove any moderator for abuse of power, or,
           if there is proof of a moderator being unable or unwilling to uphold their entrusted
           powers and responsibilities of the community they serve.
         </p>
@@ -95,7 +95,7 @@ const ModeratorGuidelines = () => {
         </p>
         <h2>Be kind</h2>
         <p>
-          Please remember to be kind. Though we only see a username and an avatar on Linkforest, always
+          Please remember to be kind. Though we only see a username and an avatar on {import.meta.env.VITE_SITENAME}, always
           keep in mind that on the other side of the interaction is another human being.
         </p>
       </main>
