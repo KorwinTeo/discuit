@@ -2,3 +2,4 @@ User-agent: *
 Disallow: /search?q=*
 Disallow: /*/modtools/*
 
+Sitemap: https://linkforest.cn/sitemap.xml
