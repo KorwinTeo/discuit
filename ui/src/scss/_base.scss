@@ -1,5 +1,5 @@
 @use 'mixins';
-
+// InterVariable字体
 @font-face {
     font-family: InterVariable;
     font-style: normal;
@@ -16,19 +16,36 @@
     src: url('../assets/fonts/InterVariable-Italic.woff2') format('woff2');
     unicode-range: U+0-2B1B, U+2B1D-10FFF;
 }
+// TiemposText字体
+@font-face {
+    font-family: TiemposText;
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url('../assets/fonts/TiemposText-Regular.woff2') format('woff2');
+    unicode-range: U+0-2B1B, U+2B1D-10FFF;
+}
+@font-face {
+    font-family: TiemposText;
+    font-style: italic;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url('../assets/fonts/TiemposText-RegularItalic.woff2') format('woff2');
+    unicode-range: U+0-2B1B, U+2B1D-10FFF;
+}
 
 :root {
-    --custom-font: InterVariable, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial,
+    --custom-font: TiemposText, serif, InterVariable, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial,
         sans-serif;
     --system-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
     --font: var(--custom-font);
-    --font-features: 'ss04' 1, 'case' 1, 'cv10' 1, 'ccmp' 1;
+    // --font-features: 'ss04' 1, 'case' 1, 'cv10' 1, 'ccmp' 1;
     --fs-base: 10px;
-    --fs-xs: 1.2rem; // extra small
-    --fs-s: 1.3rem; // small
-    --fs-normal: 1.4rem;
-    --fs-l: 1.5rem; // large
-    --fs-xl: 1.6rem; // extra-large
+    --fs-xs: 1.3rem; // extra small
+    --fs-s: 1.4rem; // small
+    --fs-normal: 1.5rem;
+    --fs-l: 1.6rem; // large
+    --fs-xl: 1.7rem; // extra-large
     --fs-2xl: 2.5rem;
     --fs-3xl: 2.8rem;
     --fs-4xl: 3.2rem;
@@ -50,7 +67,7 @@
     --base-8: 200, 200, 200;
     --base-9: 225, 225, 225;
     --base-10: 255, 255, 255;
-    --base-brand: 107, 2, 242; // Same as #6b02f2;
+    --base-brand: 217, 119, 87; // Same as #d97757;
     --base-white: var(--base-10);
     --base-black: var(--base-0);
     --base-red: 236, 72, 72; //#ec4848;
@@ -68,7 +85,7 @@
     --color-bg: rgb(var(--base-bg));
     --color-fg: rgb(var(--base-fg));
 
-    --color-body: #eee;
+    --color-body: #faf9f5;
     --color-text-black: rgb(var(--base-2));
     --color-text-white: rgb(210, 210, 210);
     --color-text: var(--color-text-black);
@@ -79,15 +96,15 @@
     --color-button: rgba(var(--base-8), 0.7); // Normal, gray button
     --color-button-hover: rgba(var(--base-8), 0.9); // #b5b5b5
     --color-button-main: var(--color-brand);
-    --color-button-main-hover: #5800c9;
+    --color-button-main-hover: #d88064;
     --color-button-red: var(--color-red);
     --color-button-red-hover: rgb(207, 64, 64);
 
     --color-input: rgba(var(--base-4), 0.15);
     --color-input-active: rgba(var(--base-4), 0.1);
     --color-input-border-hover: #d7d7d7;
-    --color-input-border-focus: #7f6bff;
-    --color-checkbox-border: #bbc1e1;
+    --color-input-border-focus: #d97757;
+    --color-checkbox-border: #e2c4bb;
     --color-checkbox-disabled: #f6f8ff;
     --color-checkbox-disabled-inner: rgba(var(--base-brand), 0.8); // #e1e6f9;
 
@@ -161,29 +178,29 @@
 }
 
 html.theme-dark {
-    --base-brand: 117, 110, 255;
+    --base-brand: 217, 119, 87;
     --base-bg: 32, 32, 32;
     --base-fg: var(--base-white);
 
     --color-body: rgb(15, 15, 15);
     --color-text: var(--color-text-white);
     --color-text-light: rgb(var(--base-8));
-    --color-link: rgb(128, 122, 255); // rgb(117, 110, 255);
+    --color-link: rgb(217, 119, 87); // rgb(117, 110, 255);
     --color-button: rgba(var(--base-2), 0.7);
-    --color-input-border-focus: #7f6bff;
+    --color-input-border-focus: #d97757;
     --color-scrollbar: rgb(var(--base-6));
 
     --color-button: rgba(var(--base-4), 0.7);
     --color-button-text: var(--color-white);
     --color-button-hover: rgba(var(--base-4), 1);
-    --color-button-main: rgb(80, 72, 238);
-    --color-button-main-hover: rgb(62, 52, 238);
+    --color-button-main: rgb(217, 119, 87);
+    --color-button-main-hover: rgb(216, 128, 100);
 
     --color-input: rgba(var(--base-4), 0.25);
     --color-input-active: rgba(var(--base-4), 0.3);
     --color-input-border-hover: #4f4f4f;
-    --color-input-border-focus: #7f6bff;
-    --color-checkbox-border: #bbc1e1;
+    --color-input-border-focus: #d97757;
+    --color-checkbox-border: #e2c4bb;
     --color-checkbox-disabled: #f6f8ff;
     --color-checkbox-disabled-inner: #e1e6f9;
 
