@@ -1,36 +1,37 @@
-siteName: Discuit
-siteDescription: A free and open-source community platform.
+siteName: Linkforest
+siteDescription: An online discussion platform
 emailContact:
 twitterURL:
 discordURL:
-githubURL: https://github.com/discuitnet/discuit
+githubURL: 
 substackURL:
 
-isDevelopment: true
-hmacSecret: <insert-your-secret-here>
+isDevelopment: true # 生产模式应修改为false
+hmacSecret: <insert-your-secret-here> 
 noLogToFile: false
 csrfOff: false
+welcomeCommunity: "general" # 设置为您想要新用户加入的社区名称, 如果不设置请留空。
 
 addr: :8080
 sessionCookieName: SID
 
-# MariaDB configuration:
-dbAddr: 127.0.0.1 # Required
-dbUser: discuit # Required
-dbPassword: discuit # Required
-dbName: discuit # Required
+# MariaDB配置:
+dbAddr: 127.0.0.1 # 必须
+dbUser: discuit # 必须
+dbPassword: discuit # 必须
+dbName: discuit # 必须
 
-# ReCAPTCHA or hCaptcha secret and site-key:
+# ReCAPTCHA或hCaptcha secret和site-key:
 captchaSecret:
 captchaSiteKey:
-disableRateLimits: false
+disableRateLimits: false # 默认开启速率限制，开发模式可设置为true，即无速率限制
 
-# TLS certificate key-pair paths:
+# TLS certificate和key-pair的路径:
 certFile:
 keyFile:
 
-defaultFeedSort: hot
-disableForumCreation: true
+defaultFeedSort: hot # 默认内容排序为热门
+disableForumCreation: false # 开启版块创建，默认为true，即不创建，生产模式应修改为false
 forumCreationReqPoints: 10
 maxForumsPerUser: 10
 imagesFolderPath: "images"
