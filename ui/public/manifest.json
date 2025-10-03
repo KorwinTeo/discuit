@@ -1,8 +1,8 @@
 {
-  "name": "Discuit",
-  "short_name": "Discuit",
+  "name": "Linkforest",
+  "short_name": "Linkforest",
   "description": "",
-  "id": "discuit_pwa_v1",
+  "id": "linkforest_pwa_v1",
   "icons": [
     {
       "src": "/logo-manifest-512.png?v=2",
