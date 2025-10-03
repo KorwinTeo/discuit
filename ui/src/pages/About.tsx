@@ -10,7 +10,7 @@ const About = () => {
             A social platform by the users, for the users.
           </h1>
           <h2 className="about-subheading">
-            Linkforest is a non-profit, open-source community discussion platform. It’s an alternative
+            {import.meta.env.VITE_SITENAME} is a non-profit, open-source community discussion platform. It’s an alternative
             to Reddit.
           </h2>
         </div>
@@ -37,26 +37,26 @@ const About = () => {
             <div className="about-highlight">
               <span className="is-bold">No ads. No tracking.</span>
               There are no ads, no forms of affiliate marketing, and no tracking anywhere on
-              Linkforest. And neither your attention, nor your data, is monetized in any way, shape or
+              {import.meta.env.VITE_SITENAME}. And neither your attention, nor your data, is monetized in any way, shape or
               form.
             </div>
             <div className="about-highlight">
               <span className="is-bold">Enshitification-proof.</span>
-              {`Linkforest is a non-profit that's funded entirely by its users through donations. The
+              {import.meta.env.VITE_SITENAME} is a non-profit that's funded entirely by its users through donations. The
               lack of a profit motive—and the lack of any shareholders or investors to answer to—is
               essential in keeping this platform completely aligned with the interests and the
-              well-being of its users.`}
+              well-being of its users.
             </div>
             <div className="about-highlight">
               <span className="is-bold">Giving agency to users.</span>
               Choice over what appears on your feed. Multiple feeds. A plethora of ways to filter
-              content. In short, you have complete control over what you see on Linkforest. (Please
-              note that Linkforest is a work in progress and that many of these features are yet to be
+              content. In short, you have complete control over what you see on {import.meta.env.VITE_SITENAME}. (Please
+              note that {import.meta.env.VITE_SITENAME} is a work in progress and that many of these features are yet to be
               built.)
             </div>
             <div className="about-highlight">
               <span className="is-bold">No dark patterns.</span>
-              On Linkforest, there are no nagging popups asking you to sign up. You don’t need an
+              On {import.meta.env.VITE_SITENAME}, there are no nagging popups asking you to sign up. You don’t need an
               account to simply view a page. Images, in their highest quality, can be freely
               downloaded. We don’t manipulate you into using our platform more than you desire to.
             </div>
