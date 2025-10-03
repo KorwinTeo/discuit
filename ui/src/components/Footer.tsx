@@ -113,14 +113,6 @@ const Footer = () => {
           <Link className="footer-item" to="/privacy-policy">
             Privacy
           </Link>
-          <a
-            className="footer-item"
-            href="https://docs.discuit.org/"
-            target="_blank"
-            rel="noopener"
-          >
-            Documentation
-          </a>
         </div>
       </div>
     </footer>
