@@ -18,6 +18,7 @@ import { mfetch, mfetchjson } from '../helper';
 import { useInputUsername } from '../hooks';
 import { CommunitiesSort, Community } from '../serverTypes';
 import { FeedItem } from '../slices/feedsSlice';
+import { communitiesAdded } from '../slices/communitiesSlice';
 import {
   allCommunitiesSearchQueryChanged,
   allCommunitiesSortChanged,
@@ -66,23 +67,31 @@ const AllCommunities = () => {
     dispatch(allCommunitiesSortChanged(sort));
   };
 
+  // 在 AllCommunities 组件中添加对 communities store 的监听
+  const communities = useSelector<RootState>((state) => state.communities.items) as { [name: string]: Community };
+  
   const fetchCommunities = async () => {
     const res = (await mfetchjson(`/api/communities?sort=${sort}`)) as Community[];
+    // 将获取的社区数据同步到 Redux store
+    dispatch(communitiesAdded(res));
     const items = res.map((community) => new FeedItem(community, 'community', community.id));
     return {
       items: items,
       next: null,
     };
   };
-
+  
   const handleRenderItem = (item: FeedItem<Community>) => {
+    // 从 Redux store 获取最新的社区数据
+    const latestCommunity = communities[item.item.name] || item.item;
+    
     if (
       searchQuery !== '' &&
-      !item.item.name.toLowerCase().includes(searchQuery.trim().toLowerCase())
+      !latestCommunity.name.toLowerCase().includes(searchQuery.trim().toLowerCase())
     ) {
       return null;
     }
-    return <ListItem community={item.item} />;
+    return <ListItem community={latestCommunity} />;
   };
 
   const renderSearchBox = () => {
@@ -306,7 +315,7 @@ const ListItem = React.memo(function ListItem({ community }: { community: Commun
 
   const handleClick: React.MouseEventHandler = (event) => {
     if ((event.target as Element).tagName !== 'BUTTON') {
-      history.push(to);
+      history.push(到);
     }
   };
 
