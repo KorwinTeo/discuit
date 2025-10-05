@@ -237,8 +237,8 @@ type NotificationView struct {
 	Version    int              `json:"version"`
 	Type       NotificationType `json:"type"`
 	TextFormat TextFormat       `json:"textFormat"`
-	Title      string           `json:"title"`
-	Body       string           `json:"body"`
+	标题      string           `json:"title"`
+	正文       string           `json:"body"`
 	Icons      []string         `json:"icons"` // list of urls
 	ToURL      string           `json:"toURL"`
 	Seen       bool             `json:"seen"`
@@ -1215,7 +1215,7 @@ func (n *NotificationWelcome) marshalJSONForAPI(ctx context.Context, db *sql.DB)
 func (n NotificationWelcome) view(ctx context.Context, db *sql.DB, format TextFormat) (*NotificationView, error) {
 	view := &NotificationView{
 		ToURL: "/" + n.CommunityName,
-		Title: fmt.Sprintf("%s. Make a post in our %s community to say hello!", encloseInBold(format, "Welcome to Discuit"), encloseInBold(format, n.CommunityName)),
+		Title: fmt.Sprintf("%s. Make a post in our %s community to say hello!", encloseInBold(format, "Welcome to Linkforest"), encloseInBold(format, n.CommunityName)),
 	}
 	view.setIcon(nil)
 	return view, nil
