@@ -237,8 +237,8 @@ type NotificationView struct {
 	Version    int              `json:"version"`
 	Type       NotificationType `json:"type"`
 	TextFormat TextFormat       `json:"textFormat"`
-	标题      string           `json:"title"`
-	正文       string           `json:"body"`
+	Title      string           `json:"title"`
+	Body       string           `json:"body"`
 	Icons      []string         `json:"icons"` // list of urls
 	ToURL      string           `json:"toURL"`
 	Seen       bool             `json:"seen"`
