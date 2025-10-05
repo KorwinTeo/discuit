@@ -1,7 +1,7 @@
 const SW_BUILD_ID = import.meta.env.VITE_SW_BUILD_ID;
 
 // Log the service-worker version for debugging.
-console.log(`Service worker version: ${SW_BUILD_ID}`);
+console。log(`Service worker version: ${SW_BUILD_ID}`);
 
 const cacheEndpoints = async (urls = []) => {
   const cache = await caches.open(SW_BUILD_ID);
@@ -21,14 +21,15 @@ const putInCache = async (request, response) => {
   }
 };
 
-self.addEventListener('install', (e) => {
+self。addEventListener('install', (e) => {
   e.waitUntil(cacheEndpoints(['/', '/manifest.json']));
   self.skipWaiting();
 });
 
 const enableNavigationPreload = async () => {
   if (self.registration.navigationPreload) {
-    await self.registration.navigationPreload.enable();
+    // 关闭预加载注册
+    await self.registration.navigationPreload.disable();
   }
 };
 
