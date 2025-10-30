@@ -105,6 +105,7 @@
 
 .page-dashboard {
     --head-section-height: 60px;
+    --sidebar-left-width: 240px;
     display: grid;
     padding: 0;
     .inner-wrap {
@@ -130,6 +131,7 @@
         }
         h1 {
             font-size: var(--fs-2xl);
+            font-weight: 545;
         }
     }
     .page-dashboard-wrap {
@@ -178,6 +180,19 @@
         font-size: calc(var(--fs-xl) * 1.4);
         border-bottom: var(--seperator);
         padding-bottom: 8px;
+        .right {
+            display: flex;
+            align-items: center;
+            > * {
+                margin-right: var(--gap);
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+            .form-field {
+                font-size: var(--fs-normal);
+            }
+        }
     }
 }
 

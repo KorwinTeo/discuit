@@ -233,6 +233,8 @@ func New(db *sql.DB, conf *config.Config) (*Server, error) {
 		return nil, fmt.Errorf("error loading database blocks: %v", err)
 	}
 
+	go reloadTorIPBlocking(db, s.ipblocks)
+
 	return s, nil
 }
 
@@ -445,15 +447,16 @@ func (s *Server) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	if r.URL.Path == "/robots.txt" {
+	switch r.URL.Path {
+	case "/robots.txt":
 		http.ServeFile(w, r, "./robots.txt")
-	} else if r.URL.Path == "/manifest.json" {
+	case "/manifest.json":
 		w.Header().Add("Cache-Control", "no-cache")
 		http.ServeFile(w, r, "./ui/dist/manifest.json")
-	} else if r.URL.Path == "/sitemap.xml" {
+	case "/sitemap.xml":
 		// Handle sitemap.xml through the API router
 		httputil.GzipHandler(s.router).ServeHTTP(w, r)
-	} else {
+	default:
 		if strings.HasPrefix(r.URL.Path, "/api/") {
 			w.Header().Add("Content-Type", "application/json; charset=UTF-8")
 			w.Header().Add("Cache-Control", "no-store")
